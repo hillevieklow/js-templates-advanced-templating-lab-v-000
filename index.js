@@ -1,5 +1,4 @@
 function init() {
-  //put any page initialization/handlebars initialization here
   let template = Handlebars.compile(document.getElementById("recipe-form-template").innerHTML);
   document.getElementsByTagName("main")[0].innerHTML = template({"submitAction": "handleSubmit()"});
   Handlebars.registerPartial("recipeDetailsPartial", document.getElementById("recipe-details-partial").innerHTML);
@@ -26,19 +25,19 @@ function recipeValues() {
   return(recipe);
 }
 
-function handleSubmit() {
+ function handleSubmit() {
   let recipe = recipeValues();
   let template = Handlebars.compile(document.getElementById("recipe-template").innerHTML);
   document.getElementById("main").innerHTML = template(recipe);
 }
 
-function updateRecipe() {
+ function updateRecipe() {
   let recipe = recipeValues();
   let template = Handlebars.compile(document.getElementById("recipe-template").innerHTML);
   document.getElementById("main").innerHTML = template(recipe);
 }
 
-function displayEditForm() {
+ function displayEditForm() {
   let name = document.getElementById("name").innerHTML;
   let description = document.getElementById("description").innerHTML;
   let ingredientNodes = document.getElementsByName("ingredients");
